@@ -1,3 +1,8 @@
+---
+marp: true
+---
+
+
 # Lizard Habitat Monitoring System – PPP
 
 ## AI-Driven IoT System Development  
