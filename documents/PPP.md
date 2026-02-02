@@ -40,7 +40,6 @@ This project focuses on **awareness and prevention**, not automated diagnosis or
   - Environmental trends over time  
   - Periods outside recommended ranges  
 
-The system supports **user decision-making**, not automated health judgments.
 
 ---
 
@@ -59,12 +58,9 @@ Project progress will be evaluated using:
 
 AI tools will assist with:
 
-- Embedded programming and sensor integration  
 - Debugging hardware and communication issues  
 - Explaining unfamiliar concepts during development  
 - Planning and documenting project progress  
-
-AI is used as a **learning and development assistant**, not as a predictive or diagnostic system.
 
 ---
 
@@ -105,8 +101,7 @@ AI is used as a **learning and development assistant**, not as a predictive or d
 
 ### Not Included
 - Health diagnosis or treatment recommendations  
-- Automated decision-making for animal care  
-- Advanced machine learning models  
+- Automated decision-making for animal care such as changing temp or activating sprinklers 
 
 ---
 
