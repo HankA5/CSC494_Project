@@ -1,54 +1,108 @@
-## Lizard Habitat Monitoring System
+# Lizard Habitat Monitoring System
 
-### Project Overview
-The goal of this project is to develop an AI-assisted IoT system that monitors a lizard’s habitat conditions and activity, such as temperature, humidity, and basic behavior indicators.
+## Project Overview
+This project implements an AI-assisted IoT system that monitors a lizard’s habitat conditions and behavior, including temperature, humidity, and position within the enclosure.
 
-Proper environmental conditions are critical for reptile health. Temperature, humidity, and lighting must stay within specific ranges, and changes in behavior can indicate stress or health concerns. However, these conditions are usually monitored manually and inconsistently.
+Proper environmental conditions are critical for reptile health. Temperature and humidity must remain within specific ranges, and changes in behavior can indicate stress or health issues. These factors are often monitored manually and inconsistently.
 
-This project focuses on using IoT devices and AI-assisted development to improve awareness of habitat conditions rather than creating complex machine learning models.
-
----
-
-### Problem Statement
-Lizard owners often rely on manual checks to monitor enclosure conditions, which can lead to missed temperature or humidity issues. In addition, subtle changes in behavior may go unnoticed until a problem becomes serious.
-
-This project aims to provide continuous monitoring and simple reporting to help identify potential habitat issues earlier.
+This system provides **continuous, automated monitoring and reporting**, allowing early detection of potential habitat problems.
 
 ---
 
-### Project Goals
-- Measure temperature and humidity inside the lizard enclosure  
-- Collect basic activity or behavior data (e.g., movement or camera footage)  
-- Store and report collected data over time  
-- Allow users to view habitat conditions from a personal device  
-- Use AI tools to assist with development, debugging, and learning  
+## Problem Statement
+Lizard owners typically rely on manual checks to monitor enclosure conditions, which can result in missed environmental issues. Additionally, subtle behavioral changes—such as consistently avoiding a heat source—may go unnoticed.
+
+This project solves that problem by providing **real-time data collection and automated summaries**, improving awareness and enabling earlier intervention.
 
 ---
 
-### Technologies and Tools (Planned)
+## Final Solution
 
-#### Hardware
-- ESP32 microcontroller  
-- Temperature and humidity sensor  
-- Optional camera or motion sensor  
+The completed system:
+
+- Measures **temperature and humidity** using a sensor  
+- Tracks **lizard position** (hot side, cool side, or not visible) using a camera  
+- Combines environmental and behavioral data  
+- Sends **automated email reports** summarizing conditions  
+
+---
+
+## Technologies and Tools
+
+### Hardware
+- **ESP32-C6 (XIAO)** — main controller, Wi-Fi, email reporting  
+- **ESP32-CAM (AI-Thinker)** — camera-based motion detection  
+- **AHT10 Sensor** — temperature and humidity  
 - Breadboard and jumper wires  
 
-#### Software
-- Arduino IDE  
-- Data processing and reporting scripts  
-- Simple web or device-based interface  
-- GitHub for version control  
+### Software
+- **Arduino IDE** — development and deployment   
+- **Email reporting system** (via Wi-Fi)  
 
-#### AI Tools
-- AI assistance for coding, debugging, and documentation  
-- AI-assisted planning and problem-solving during development  
+### Libraries
+- `Adafruit_AHTX0`  
+- `ESP_Mail_Client`  
+- `esp_camera`  
+
+### AI Tools
+- Used for:
+  - Code generation and debugging  
+  - Hardware setup guidance  
+  - Library selection  
+  - System design decisions  
 
 ---
 
-### Project Scope
-This project focuses on monitoring and reporting habitat conditions and basic activity data. It does not attempt to diagnose health issues or replace professional veterinary advice.
+## System Architecture
+
+- **ESP32-CAM**
+  - Captures grayscale frames  
+  - Uses frame differencing to detect motion  
+  - Determines position (hot vs cool side)  
+  - Sends data via UART  
+
+- **ESP32-C6**
+  - Reads temperature and humidity every minute  
+  - Receives motion data every 10 seconds  
+  - Sends hourly email reports over Wi-Fi  
 
 ---
 
-### Project Status
-This project is currently in the planning and preparation phase. Hardware setup, data collection, and reporting features will be developed and tested in later sprints.
+## Key Features
+
+- Continuous environmental monitoring  
+- Behavior-based analysis (position tracking)  
+- Automated email reporting  
+- Multi-device communication (UART)  
+- Startup handshake system to verify device connection  
+
+---
+
+## Project Scope
+This project focuses on **monitoring and reporting** habitat conditions and basic behavioral patterns. It does not diagnose health issues or replace veterinary care.
+
+---
+
+## Final Results
+
+- Successfully collected **temperature and humidity data**  
+- Successfully implemented **camera-based motion detection**  
+- Established **communication between ESP32-CAM and ESP32-C6**  
+- Generated and sent **automated email reports**  
+- Demonstrated a working system capable of identifying potential habitat issues  
+
+---
+
+## Project Status
+✅ **Completed**
+
+All core features have been implemented, tested, and demonstrated:
+- Hardware setup complete  
+- Data collection functional  
+- Communication between devices established  
+- Reporting system operational  
+
+---
+
+## Author
+Hank Slaby
